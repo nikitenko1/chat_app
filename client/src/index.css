@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+ul {
+  list-style: disc;
+}
+/* Use the components layer for any more complicated classes you want to add to your project 
+/* that you’d still like to be able to override with utility classes */
+
+@layer components {
+  .navbar-link {
+    @apply relative outline-0 hover:after:w-2/3 hover:after:h-[2px] hover:after:bg-blue-500 hover:after:absolute hover:after:top-[100%] hover:after:mt-1 hover:after:left-[50%] hover:after:-translate-x-[50%];
+  }
+  .navbar-link.active {
+    @apply after:w-2/3 after:h-[2px] after:bg-orange-500 after:absolute after:top-[100%] after:mt-1 after:left-[50%] after:-translate-x-[50%];
+  }
+  .modal-background {
+    @apply transition-opacity fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-[rgba(0,0,0,.7)] p-10 z-[9999];
+  }
+  .modal-box {
+    @apply transition-transform bg-white w-full rounded-md;
+  }
+  .modal-box-header {
+    @apply flex items-center justify-between border-b border-gray-300 px-7 py-5;
+  }
+}
+
+.contact-container::-webkit-scrollbar {
+  display: none;
+}
